@@ -1,30 +1,38 @@
 <head><title>Express</title></head>
     <div class="main">
+        <!-- Content Start -->
         <div class="w3-container w3-border w3-auto w3-padding">
+
+            <!-- Page Intro Start-->
             <div class = "w3-container w3-section w3-border w3-padding">
                 <h1>Express web Framework</h1>
                 <p>Express is a easy to use web framework for NodeJs, handling the server and routes becomes easier with express</p>
             </div>
+            <!-- Page Intro End-->
+
+            <!-- Install Section Start -->
             <div class ="w3-panel w3-light-grey w3-border w3-border-green w3-card-2 w3-padding">
- 
                 <h2 class="w3-block w3-green w3-padding" >Installation</h2>
                 <p>To use express in your nodeJs project, express should first be installed</p>
                 <p>express can be install with npm (node package manager) like this: </p>
                 <div class = "w3-code"><code>npm install express</code></div> 
             </div> 
-            <div class="w3-panel w3-light-grey w3-border w3-border-green w3-card-2 w3-padding">
-    
-                <h2 class="w3-block w3-green w3-padding" >How to use</h2>
+            <!-- Install Section End -->
 
+            <!-- How To Use Section Start -->
+            <div class="w3-panel w3-light-grey w3-border w3-border-green w3-card-2 w3-padding">
+                <h2 class="w3-block w3-green w3-padding" >How to use</h2>
+                <!-- Intro Start-->
                 <div>
                     <p>To define and require installed package</p>
                     <div class = "w3-code"><code>const express = require('express');</code><br>
                                         <code>const app = express();</code>
                     </div>
                 </div>
+                <!-- Intro End-->
                 
+                <!-- App Listener Section Start -->
                 <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round" >
-               
                     <h2 class="w3-block w3-container">App Listener</h2>
                     <p>For express app to function, defining a port for the app to listen to is a must</p>
                     <div class = "w3-code"><code>app.listen(<b>PORT</b>)</code></div>
@@ -33,8 +41,10 @@
                         <code>app.listen(process.env.PORT)</code>
                     </div>
                 </div>
-                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round" >
+                <!-- App Listener Section End -->
 
+                <!-- Middleware Section Start -->
+                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round" >
                     <h2 class="w3-block w3-container">Middleware for requests /CRUD</h2>
                     <p>To define an endpoints</p>
                     <div class = "w3-code"><code>app.get('/', (request, response) => {<br><br>
@@ -63,16 +73,19 @@
                         <code>app.delete('/students:id', (request, response) => {console.log(request.params.id)});</code>
                     </div>
                 </div>
-                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round">
+                <!-- Middleware Section End -->
 
+                <!-- Public Files Section Start-->
+                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round">
                     <h2 class="w3-block w3-container">Public Files</h2>
                     <p>To make files available to the client with express</p>
                     <div class = "w3-code"><code>app.use(express.static('Public'))</code></div>
                     <p class="w3-section">'Public is the folder name, which is on root level'</p>
-                 
                 </div>
-                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round">
+                <!-- Public Files Section End -->
 
+                <!-- Redirect Section Start-->
+                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round">
                     <h2 class="w3-block w3-container" >Redirect route</h2>
                     <p>To redirect to a route</p>
                     <div class = "w3-code">
@@ -83,6 +96,9 @@
                         </code>
                     </div>
                 </div>
-            </div>         
+                <!-- Redirect Section End -->
+            </div>     
+            <!-- How To Use Section End -->    
         </div> 
+        <!-- Content End-->
     </div>
