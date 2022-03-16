@@ -5,9 +5,7 @@ const app = express();
 const fs = require('fs');
 
 //setting up public folder
-app.use(express.static('public'));
-
-
+    app.use(express.static('public'));
 
 //partials
 const head = fs.readFileSync('./views/partials/head.html').toString();
@@ -21,6 +19,7 @@ const template = (main)=> {
 // static pages
 const index = fs.readFileSync('./views/index.html').toString();
 const nodejs = fs.readFileSync('./views/nodejs.html').toString();
+const ssr = fs.readFileSync('./views/ssp.html').toString();
 
 
 
@@ -30,6 +29,9 @@ app.get('/',(req,res) => {
 });
 app.get('/nodejs',(req,res) => {
     res.send(template(nodejs));
+});
+app.get('/ssp',(req,res) => {
+    res.send(template(ssr));
 });
 
 

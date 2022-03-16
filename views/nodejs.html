@@ -14,6 +14,28 @@
                 <h2 class="w3-block w3-padding w3-green">Npm</h2>
                 <p>Nodejs can be downloaded and installed from browser or from third party package manager. When nodejs is installed, npm will be available globally.
                  Npm can be used to install packages to a project that are dependent on some packages, these packages are defined in package.json</p>
+                 <div class="w3-container w3-section">
+                    <img class=" w3-auto w3-block w3-section" src="./img/packagejson.jpg" style="width:350px;"></img>
+                    <p class="w3-cursive"> This is dependencies object inside package.json. Any Key/Property here is a project dependent package, in this case express and fs are packages used in the project and the application will not function properly without them</p>
+                </div>
+                <br>
+                <p>Npm can install all packages that are listed inside package.json, without the need to install them one by one</p>
+                <p>If node_modules is none existing, and package.json is listed with different packages to install them all</p>
+                <div class="w3-code">
+                    <code>npm install <span class="w3-cursive">or</span> npm i</code>
+                </div>
+                <p>To See installed packages in terminal</p>
+                <div class="w3-code">
+                    <code>npm list</code>
+                </div>
+                <h2>Reminder</h2>
+                <p>If extra steps are not made to exclude node_modules folder from repository, a big chunk of unnecessary space will be filled by node_modules folder</p>
+                <p>to prevent this, either before first commit, add <strong>'.gitignore'</strong> file to the root project folder or add it when creating the repository, then add the folder name to the file</p>
+                <div class="w3-container w3-section">
+                    <img class="w3-auto w3-block" style="width: 350px;" src="./img/gitignore.jpg" alt="github .gitignore file">
+                </div>
+
+                <p>Then from then on, every commit will exclude the node_modules folder, and each and everyone fetching this repository will have to install them locally</p>
             </div>
         </div>
     </div>
