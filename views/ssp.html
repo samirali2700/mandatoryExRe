@@ -110,10 +110,39 @@
                             const nav = fs.readFileSync('./views/partials/nav.html').toString();<br>
                             const footer = fs.readFileSync('./views/partials/footer.html').toString();<br><br>
 
-                            <p style="font-size: 14px;">//To make it easier and code less redundently a function is defined to return a full page, it has one parameter which is the main file i.e. the <strong>Body</strong> Section</p>
+                            <p style="font-size: 14px;">//To make it easier and code less redundently a function is defined to return a full page,<br> it has one parameter which is the main file i.e. the <strong>Body</strong> Section</p>
                             const template = (main)=> {
                                 <span style="margin-left:25px;"></span>return head + nav + main + footer;
-                                }
+                                }<br><br>
+                            <p style="font-size: 14px;">//The Last step will be to retrieve the main body section, i.e. the individual pages</p>
+                            const index = fs.readFileSync('./views/index.html').toString();<br>
+                            const nodejs = fs.readFileSync('./views/nodejs.html').toString();<br>
+                            const ssr = fs.readFileSync('./views/ssp.html').toString();<br><br>
+
+                            <p style="font-size: 14px;">//Now depending on the request, a specific main file is passed in the function 'template' parameter, which returns a full page</p>
+                            <div class="w3-cell-row w3-margin">
+                                <div class="w3-cell">
+                                    <p>//Endpoint ('/')</p>
+                                    app.get('/',(req,res) => {<br>
+                                    <span style="margin-left:25px;"></span>(template(index));<br>
+                                    });<br>
+                                </div>
+                                <div class="w3-cell">
+                                    <p>//Endpoint ('/nodejs') </p>
+                                    app.get('/nodejs',(req,res) => {<br>
+                                    <span style="margin-left:25px;"></span>res.send(template(nodejs));<br>
+                                    });<br>
+                                </div>
+                                <div class="w3-cell">
+                                    <p>//Endpoint ('ssr')</p>
+                                    app.get('/ssp',(req,res) => {<br>
+                                    <span style="margin-left:25px;"></span>res.send(template(ssr));<br>
+                                    });
+                                    <br>
+                                </div>
+                            </div>
+                            
+                            
 
                         </code>
                     </div>
