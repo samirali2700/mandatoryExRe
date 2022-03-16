@@ -1,0 +1,88 @@
+<head><title>Express</title></head>
+    <div class="main">
+        <div class="w3-container w3-border w3-auto w3-padding">
+            <div class = "w3-container w3-section w3-border w3-padding">
+                <h1>Express web Framework</h1>
+                <p>Express is a easy to use web framework for NodeJs, handling the server and routes becomes easier with express</p>
+            </div>
+            <div class ="w3-panel w3-light-grey w3-border w3-border-green w3-card-2 w3-padding">
+ 
+                <h2 class="w3-block w3-green w3-padding" >Installation</h2>
+                <p>To use express in your nodeJs project, express should first be installed</p>
+                <p>express can be install with npm (node package manager) like this: </p>
+                <div class = "w3-code"><code>npm install express</code></div> 
+            </div> 
+            <div class="w3-panel w3-light-grey w3-border w3-border-green w3-card-2 w3-padding">
+    
+                <h2 class="w3-block w3-green w3-padding" >How to use</h2>
+
+                <div>
+                    <p>To define and require installed package</p>
+                    <div class = "w3-code"><code>const express = require('express');</code><br>
+                                        <code>const app = express();</code>
+                    </div>
+                </div>
+                
+                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round" >
+               
+                    <h2 class="w3-block w3-container">App Listener</h2>
+                    <p>For express app to function, defining a port for the app to listen to is a must</p>
+                    <div class = "w3-code"><code>app.listen(<b>PORT</b>)</code></div>
+                    <p>In some situation a predefined port is not needed, but instead app will listen to the available port</p>
+                    <div class = "w3-code">
+                        <code>app.listen(process.env.PORT)</code>
+                    </div>
+                </div>
+                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round" >
+
+                    <h2 class="w3-block w3-container">Middleware for requests /CRUD</h2>
+                    <p>To define an endpoints</p>
+                    <div class = "w3-code"><code>app.get('/', (request, response) => {<br><br>
+                                                    <span class="w3-cursive">//obtain request information from request parameter</span><br>
+                                                    <span class="w3-cursive">//return a response with response parameter</span><br><br>
+
+                                                    response.statusCode(200).send('Working Fine');<br>     
+                                                    <span class="w3-cursive">or</span>  <br>                
+                                                    response.sendFile('./fileName', {root: __dirname});
+
+                                               <br> }</code>
+                    </div>
+                    <p>GET Method</p>
+                    <div class = "w3-code">
+                        <code>app.get('/students', (request, response) => {});</code>
+                    </div>
+                    <div class = "w3-code">
+                        <code>app.get('/students:id', (request, response) => {console.log(request.params.id)});</code>
+                    </div>
+                    <p>POST Method</p>
+                    <div class = "w3-code">
+                        <code>app.post('/students:id', (request, response) => {console.log(request.params.id)});</code>
+                    </div>
+                    <p>DELETE Method</p>
+                    <div class = "w3-code">
+                        <code>app.delete('/students:id', (request, response) => {console.log(request.params.id)});</code>
+                    </div>
+                </div>
+                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round">
+
+                    <h2 class="w3-block w3-container">Public Files</h2>
+                    <p>To make files available to the client with express</p>
+                    <div class = "w3-code"><code>app.use(express.static('Public'))</code></div>
+                    <p class="w3-section">'Public is the folder name, which is on root level'</p>
+                 
+                </div>
+                <div class="w3-panel w3-card-4 w3-margin w3-padding w3-border w3-border-green w3-round">
+
+                    <h2 class="w3-block w3-container" >Redirect route</h2>
+                    <p>To redirect to a route</p>
+                    <div class = "w3-code">
+                        <code>
+                            app.get(('/'), (req,res) => {<br>
+                                <span class="w3-margin-left">res.redirect('/home');</span><br>
+                            });
+                        </code>
+                    </div>
+                </div>
+            </div>         
+        </div> 
+    </div>
