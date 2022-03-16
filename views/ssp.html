@@ -97,29 +97,24 @@
                 <h3>Serve Page with Express</h3>
                     <p>In This section, i will demonstrate how to put sections together piece by piece, and easly responde with a main page</p>
                 <div class="w3-border w3-border w3-border-green w3-section w3-card-2 w3-padding">
-                    <p>Firstly 'fs' is needed to retrieve the files on the server,
-                        after installing it and requiring it in main app file
-                    </p>
+                    
                     <div class="w3-code">
                         <code>
-                            const fs = require('fs');
-                        </code>
-                    </div>
-                    <p>Then, the partials are retrieved to put together a template</p>
-                    <div class="w3-code">
-                        <code>
+                            <p style="font-size: 14px;">//Firstly 'fs' is needed to retrieve the files on the server,
+                                after installing it and requiring it in main app file
+                            </p>
+                            const fs = require('fs');<br><br>
+
+                            <p style="font-size: 14px;">//Then, the partials are retrieved to put together a template</p>
                             const head = fs.readFileSync('./views/partials/head.html').toString();<br>
                             const nav = fs.readFileSync('./views/partials/nav.html').toString();<br>
-                            const footer = fs.readFileSync('./views/partials/footer.html').toString();<br>
+                            const footer = fs.readFileSync('./views/partials/footer.html').toString();<br><br>
 
-                        </code>
-                    </div>
-                    <p>To make it easier and code less redundently a function is defined to return a full page, it has one parameter which is the main file i.e. the <strong>Body</strong> Section</p>
-                    <div class="w3-code">
-                        <code>
+                            <p style="font-size: 14px;">//To make it easier and code less redundently a function is defined to return a full page, it has one parameter which is the main file i.e. the <strong>Body</strong> Section</p>
                             const template = (main)=> {
-                            <span style="margin-left:25px;"></span>return head + nav + main + footer;
-                            }
+                                <span style="margin-left:25px;"></span>return head + nav + main + footer;
+                                }
+
                         </code>
                     </div>
                 </div>
