@@ -1,0 +1,108 @@
+<head><title>Serving Static Pages</title></head>
+    <div class="main">
+        <!-- Content Start --> <!-- The Content of every page will be inside div child of main, that way, modification to the style is seperated by a general styling i.e. 'main' and individual which is done with w3CSS-->
+        <div class="w3-container w3-auto w3-border w3-padding">
+            <h1>Serving Static Pages</h1>
+                <p>
+                    With Express there are alot of options on how or what to return to a request,
+                    as seen in Express section of the website, a file can be returned with the function <strong><code>app.sendFile('Path')</code></strong>
+                    or in my case the files can be retrieved on the server and the send raw text that are translated to html, in this way, multiple pages or sections of a page can be combined to produce a single page
+                </p>
+            <!-- Example Section Start-->
+            <div class="w3-panel w3-light-grey w3-card-2 w3-border">
+                <h3>Example</h3>
+                    <p>A single page will most likely always include 4 sections</p>
+                    <p>Snippet of each section:</p>
+                <div class=" w3-border w3-border-green w3-section w3-card">
+                    <!-- Head Code Snippet start -->
+                    <div class="w3-hover-green">
+                        <div class="w3-block w3-padding" onclick="toggle('headSection')">
+                            <h3>Head</h3>
+                        </div>
+                        <div class="w3-hide w3-code w3-border w3-border-green w3-margin" id="headSection" style="user-select: none;">
+                            <code>
+                                &lt;!DOCTYPE html&gt;<br>
+                                <span style="margin-left:25px;"></span>&lt;html&gt;<br>
+                                <span style="margin-left:50px;"></span>&lt;head&gt;<br>
+                                <span style="margin-left:75px;"></span>&lt;link rel="stylesheet" href="/Global.css"&gt;<br>
+                                <span style="margin-left:75px;"></span>&lt;link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"&gt;<br>
+                                <span style="margin-left:50px;"></span>&lt;/head&gt;
+                            </code>
+                        </div>
+                    </div>
+                    <!-- Nav Snippet Start -->
+                    <div class="w3-hover-green" >
+                        <div class="w3-block w3-padding w3-border-top" onclick="toggle('navSection')">
+                            <h3>Nav</h3>
+                        </div>
+                        <div class="w3-hide w3-code w3-border w3-border-green w3-margin" id="navSection">
+                            <code>
+                                &lt;nav&gt;<br>
+                                <span style="margin-left:25px;">&lt;ul class="w3-ul w3-bar w3-green"&gt;</span><br>
+                                <span style="margin-left:50px;">&lt;li class="w3-bar-item"&gt;&lt;a href="/"&gt;Express&lt;/a&gt;&lt;/li&gt;</span><br>
+                                <span style="margin-left:50px;">&lt;li class="w3-bar-item"&gt;&lt;a href="/ssp"&gt;Serving Static Pages&lt;/a&gt;&lt;/li&gt;</span><br>
+                                <span style="margin-left:50px;">&lt;li class="w3-bar-item"&gt;&lt;a href="/nodejs"&gt;NodeJs&lt;/a&gt;&lt;/li&gt;</span><br>
+                                <span style="margin-left:25px;">&lt;/ul&gt;</span><br>
+                                &lt;/nav&gt;<br>
+                            </code>
+                        </div>
+                    </div>
+                     <!-- Body Snippet Start -->
+                    <div class="w3-hover-green" >
+                        <div class="w3-block w3-padding w3-border-top" onclick="toggle('bodySection')">
+                            <h3>Body</h3>
+                        </div>
+                        <div class="w3-hide w3-code w3-border w3-border-green w3-margin" id="bodySection">
+                            <code>
+                                &lt;div class="main"&gt;<br>
+                                <span style="margin-left:25px; font-size:14px;">&lt;!-- This main div is only defined for styling purposes -every page will include a div with class 'main'--&gt;</span>
+                                <br>
+                                &lt;/div&gt;
+                            </code>
+                        </div>
+                    </div>
+                     <!-- Footer Snippet Start -->
+                    <div class="w3-hover-green" >
+                        <div class="w3-block w3-padding  w3-border-top" onclick="toggle('footerSection')">
+                            <h3>Footer</h3>
+                        </div>
+                        <div class="w3-hide w3-code w3-border w3-border-green w3-margin" id="footerSection">
+                            <code>
+                                <span style="margin-left:25px;"></span> &lt;footer class="w3-green w3-cell-row"&gt;<br>
+                                <span style="margin-left:50px;"></span>&lt;p class="w3-cell w3-cell-middle"&gt;&copy; 2020&lt;/p&gt;<br>
+                                <span style="margin-left:50px;"></span> class="w3-cell w3-cell-middle w3-right"&gt;Styling done with w3CSS&lt;/p&gt;<br>
+                                <span style="margin-left:25px;"></span>&lt;/footer&gt;<br>
+                                &lt;/html&gt;
+                            </code>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section Explanation Start -->
+                <div class="w3-panel w3-padding w3-border">
+                    <p>The Sections shown above each has it's own file, the first file/section which is <strong>'Head'</strong>, starts with a 
+                        <code><strong>&lt;!DOCTYPE html&gt;</strong></code> and opening <code><strong>&lt;html&gt;</strong></code> tag,
+                        notice there are no closing tag, that is because this part is only the top part of a whole page that is to be put together piece by piece.
+                        The sections can be used as template page for the website, every section will be easy and fast to change since its only one file instead of all pages                    
+                    </p>
+                    <p>All Pages are located in folder <strong>views</strong> on root level, and the sections (Head, Nav and Footer) are located in folder <strong>views/partials</strong></p>
+                    <p>If you notice in the <strong>Head</strong> section, the first stylesheet href is pointing to '/Global.css', that is only possible because
+                        'Global.css' is located on a public folder, which is accessible on the frontend, in fact, this website is mostly CSR (Client Side Rendering), exept the raw html that are send back with a request
+                        the styling and javascripts are first implemented when reaching the client. 
+                    </p>
+                </div>
+                <!-- Section Explanaion End -->
+            </div>
+            <!-- Example section End -->
+            <div class="w3-panel w3-light-grey w3-card-2">
+                <h3>Serve Page with Express</h3>
+                    <p>In This section, i will demonstrate how to put sections together piece by piece, and easly responde with a main page</p>
+                <div class="w3-border w3-border w3-border-green w3-section w3-card-2">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!-- Content End -->
+    </div>
+
+       
+    
